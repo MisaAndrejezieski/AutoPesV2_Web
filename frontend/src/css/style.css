@@ -1,13 +1,21 @@
+/* ============================================
+   AutoPes V2 - Dark Neon Theme
+   Autor: Misael Andrejezieski
+   Versão: 2.0.0
+   ============================================ */
+
 :root {
     --bg-primary: #0a0a0a;
     --bg-secondary: #111111;
     --bg-tertiary: #1a1a1a;
     --bg-input: #1f1f1f;
+    
     --neon-cyan: #00f3ff;
     --neon-pink: #ff006e;
     --neon-green: #00ff88;
     --neon-yellow: #ffbe0b;
     --neon-purple: #8338ec;
+    
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
     --text-muted: #6c6c6c;
@@ -35,6 +43,7 @@ body {
     width: 100%;
 }
 
+/* Header */
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -72,6 +81,7 @@ h1 {
     margin: 15px 0;
 }
 
+/* Cards */
 .card {
     background: var(--bg-secondary);
     margin-bottom: 20px;
@@ -91,11 +101,13 @@ h1 {
 .card__header.cyan { border-top-color: var(--neon-cyan); color: var(--neon-cyan); }
 .card__header.pink { border-top-color: var(--neon-pink); color: var(--neon-pink); }
 .card__header.purple { border-top-color: var(--neon-purple); color: var(--neon-purple); }
+.card__header.green { border-top-color: var(--neon-green); color: var(--neon-green); }
 
 .card__body {
     padding: 20px;
 }
 
+/* Formulários */
 .form-group {
     display: flex;
     justify-content: space-between;
@@ -107,6 +119,7 @@ h1 {
     color: var(--neon-yellow);
     font-size: 11px;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .form-group input {
@@ -127,6 +140,7 @@ h1 {
     box-shadow: 0 0 5px var(--neon-green);
 }
 
+/* Status */
 .status-area {
     display: flex;
     align-items: center;
@@ -142,10 +156,12 @@ h1 {
     box-shadow: 0 0 5px var(--neon-green);
 }
 
+/* Botões */
 .button-group {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -156,6 +172,8 @@ h1 {
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-success {
@@ -182,11 +200,38 @@ h1 {
     box-shadow: 0 0 10px var(--neon-pink);
 }
 
+.btn-download {
+    background: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    padding: 12px 30px;
+    font-size: 14px;
+}
+
+.btn-download:hover {
+    background: var(--neon-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
 .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
+/* Requirements */
+.requirements {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.requirements p {
+    color: var(--text-secondary);
+    font-size: 10px;
+    margin: 5px 0;
+}
+
+/* Log */
 .log-container {
     background: var(--bg-primary);
     height: 200px;
@@ -199,6 +244,7 @@ h1 {
     line-height: 1.6;
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 20px;
@@ -224,4 +270,38 @@ footer {
 
 ::-webkit-scrollbar-thumb {
     background: var(--neon-purple);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .icon {
+        font-size: 44px;
+    }
 }
