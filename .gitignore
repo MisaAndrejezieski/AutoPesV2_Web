@@ -1,0 +1,48 @@
+# ============================================
+# AutoPes V2 - Git Ignore
+# ============================================
+
+# Backend
+backend/.env
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/*.log
+
+# Virtual Environment
+venv/
+env/
+.venv/
+ENV/
+
+# Frontend
+frontend/node_modules/
+frontend/.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Secrets
+*.secret
+*.key
+*.pem
+
+# Build
+dist/
+build/
+*.exe
