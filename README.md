@@ -58,3 +58,14 @@ Os resultados são salvos automaticamente em CSV na pasta `data/resultados/`
 ---
 
 ## 📁 Estrutura do Projeto
+
+AutoPesV2_Web/
+├── frontend/
+│ ├── index.html # Página principal
+│ ├── download/ # Executável
+│ └── src/
+│ ├── css/style.css # Estilos Dark Neon
+│ └── js/script.js # Interatividade
+├── LICENSE
+└── README.md
+
