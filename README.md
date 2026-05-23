@@ -69,3 +69,67 @@ AutoPesV2_Web/
 ├── LICENSE
 └── README.md
 
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+| Frontend | Desktop |
+|----------|---------|
+| HTML5 | Python 3.13 |
+| CSS3 (Dark Mode) | PyAutoGUI |
+| JavaScript | Tkinter |
+| Vercel (hospedagem) | CSV |
+
+---
+
+## 🎨 Interface
+
+- **Dark Mode** - Fundo preto para conforto visual
+- **Neon** - Cores vibrantes para destaques
+- **Responsivo** - Funciona em qualquer dispositivo
+- **Cards** - Organização visual clara
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 👨‍💻 Autor
+
+**Misael Andrejezieski**
+
+- GitHub: [@MisaAndrejezieski](https://github.com/MisaAndrejezieski)
+- Projeto: [AutoPesV2_Web](https://github.com/MisaAndrejezieski/AutoPesV2_Web)
+
+---
+
+## ⭐ Como Contribuir
+
+1. Faça um Fork do projeto
+2. Crie uma branch (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+---
+
+## 📞 Suporte
+
+- Abra uma [Issue](https://github.com/MisaAndrejezieski/AutoPesV2_Web/issues)
+- Ou entre em contato pelo GitHub
+
+---
+
+## 🙏 Agradecimentos
+
+- Hospedagem: Vercel
+- Versionamento: GitHub
+
+---
+
+**⭐ Se gostou, deixe uma estrela no GitHub!**
+
