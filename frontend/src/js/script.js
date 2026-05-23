@@ -1,5 +1,7 @@
 /**
  * AutoPes V2 - Frontend Controller
+ * Autor: Misael Andrejezieski
+ * Versão: 2.0.0
  */
 
 const API_URL = 'http://localhost:5000';
@@ -136,8 +138,23 @@ function finalizar(sucesso) {
     }
 }
 
+// Eventos
 btnIniciar.onclick = iniciar;
 btnParar.onclick = parar;
 
+// Validação dos inputs
+temasInput.addEventListener('change', () => {
+    let val = parseInt(temasInput.value);
+    if (val < 1) temasInput.value = 1;
+    if (val > 10) temasInput.value = 10;
+});
+
+perguntasInput.addEventListener('change', () => {
+    let val = parseInt(perguntasInput.value);
+    if (val < 1) perguntasInput.value = 1;
+    if (val > 6) perguntasInput.value = 6;
+});
+
+// Inicialização
 addLog('Sistema pronto. Aguardando comando...', 'success');
 updateStatus('Pronto');
