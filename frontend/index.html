@@ -1,33 +1,126 @@
 <!DOCTYPE html>
+<!-- 
+    DOCTYPE: Define que este documento é HTML5
+    Isso garante que o navegador renderize no modo padrão mais moderno
+-->
 <html lang="pt-BR">
+<!-- 
+    lang="pt-BR": Define o idioma da página como português do Brasil
+    Importante para acessibilidade e SEO (mecanismos de busca)
+-->
 <head>
+    <!-- 
+        HEAD: Contém metadados (informações sobre a página)
+        Nada aqui aparece visualmente, mas é crucial para funcionamento
+    -->
+    
     <meta charset="UTF-8">
+    <!-- 
+        charset UTF-8: Suporta caracteres especiais (ç, ã, é, acentos)
+        Sem isso, acentos podem aparecer como caracteres estranhos
+    -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        viewport: Controla como o site aparece em dispositivos móveis
+        width=device-width: largura igual à tela do dispositivo
+        initial-scale=1.0: zoom inicial normal (sem zoom)
+        Isso torna o site RESPONSIVO
+    -->
+    
     <meta name="description" content="AutoPes V2 - Automação de Pesquisas Inteligente">
+    <!-- 
+        description: Aparece nos resultados de busca do Google
+        Importante para SEO - pessoas verem isso antes de clicar
+    -->
+    
     <meta name="author" content="Misael Andrejezieski">
+    <!-- author: Identifica quem criou o site -->
+    
     <title>AutoPes V2</title>
+    <!-- 
+        TITLE: Aparece na aba do navegador
+        Também usado pelo Google nos resultados de busca
+    -->
+    
     <link rel="stylesheet" href="src/css/style.css">
+    <!-- 
+        LINK: Conecta o arquivo CSS (estilos) ao HTML
+        href: caminho do arquivo
+        rel="stylesheet": diz que é uma folha de estilo
+    -->
 </head>
 <body>
+    <!-- 
+        BODY: Tudo que aparece visualmente na página
+        É o "corpo" do site
+    -->
+    
     <div class="container">
+        <!-- 
+            DIV: É uma "caixa" que agrupa elementos
+            class="container": dá um nome para aplicar estilos CSS
+            container geralmente centraliza e limita a largura
+        -->
+        
+        <!-- ========== CABEÇALHO ========== -->
         <header>
+            <!-- 
+                HEADER: Tag semântica para cabeçalho da página
+                Melhor que div para acessibilidade e SEO
+            -->
             <div class="logo">
                 <span class="icon">⚡</span>
+                <!-- 
+                    SPAN: Elemento inline (não quebra linha)
+                    Diferente da div que é block (quebra linha)
+                -->
                 <h1>AutoPes <span class="version">V2</span></h1>
+                <!-- 
+                    H1: Título principal da página (só deve haver um)
+                    Importante para SEO - Google dá peso para isso
+                -->
             </div>
             <div class="divider"></div>
+            <!-- 
+                divider: Linha decorativa (estilizada no CSS)
+            -->
         </header>
 
-        <!-- Card Download -->
+        <!-- ========== CARD DE DOWNLOAD ========== -->
         <div class="card">
-            <div class="card__header green">[ DOWNLOAD ]</div>
+            <!-- 
+                CARD: Componente visual com borda, sombra, padding
+                Muito usado em interfaces modernas (como cartões)
+            -->
+            <div class="card__header green">
+                <!-- 
+                    card__header: BEM naming convention
+                    __ significa "elemento dentro de card"
+                    green: modificador (outra cor)
+                -->
+                <span>[</span> DOWNLOAD <span>]</span>
+            </div>
             <div class="card__body">
+                <!-- card__body: Conteúdo do card -->
+                
                 <div class="button-group">
+                    <!-- 
+                        button-group: Grupo de botões centralizados
+                    -->
                     <a href="download/AutoPesV2.exe" class="btn btn-download" download>
+                        <!-- 
+                            A: Tag de link (âncora)
+                            href: caminho do arquivo para download
+                            download: Atributo que FORÇA o download (não navegar)
+                            btn, btn-download: classes para estilizar
+                        -->
                         📥 BAIXAR AUTOPESV2.EXE
                     </a>
                 </div>
+                
                 <div class="requirements">
+                    <!-- requirements: Lista de requisitos do sistema -->
                     <p>✅ Windows 10/11</p>
                     <p>✅ Microsoft Edge</p>
                     <p>✅ Sem necessidade de instalação</p>
@@ -36,61 +129,53 @@
             </div>
         </div>
 
-        <!-- Card Configurações -->
+        <!-- ========== CARD COMO USAR ========== -->
         <div class="card">
-            <div class="card__header cyan">[ CONFIGURAÇÕES ]</div>
+            <div class="card__header cyan">[ COMO USAR ]</div>
             <div class="card__body">
-                <div class="form-group">
-                    <label>📊 TEMAS:</label>
-                    <input type="number" id="temas" value="2" min="1" max="10">
-                </div>
-                <div class="form-group">
-                    <label>❓ PERGUNTAS POR TEMA:</label>
-                    <input type="number" id="perguntas" value="2" min="1" max="6">
+                <div class="instructions">
+                    <!-- instructions: Instruções numeradas -->
+                    <p>1️⃣ Baixe o arquivo AutoPesV2.exe</p>
+                    <p>2️⃣ Execute o programa</p>
+                    <p>3️⃣ Escolha número de temas e perguntas</p>
+                    <p>4️⃣ Clique em "Iniciar"</p>
+                    <p>5️⃣ Aguarde a automação</p>
+                    <p>6️⃣ Resultados salvos em CSV</p>
                 </div>
             </div>
         </div>
 
-        <!-- Card Status -->
+        <!-- ========== CARD SOBRE ========== -->
         <div class="card">
-            <div class="card__header purple">[ STATUS ]</div>
+            <div class="card__header purple">[ SOBRE ]</div>
             <div class="card__body">
-                <div class="status-area">
-                    <div class="led" id="led"></div>
-                    <span id="statusText">Pronto</span>
+                <p class="about-text">
+                    AutoPes V2 é uma ferramenta desktop que automatiza pesquisas 
+                    no Microsoft Edge, gerando relatórios em CSV com os resultados.
+                </p>
+                <div class="tech-stack">
+                    <!-- tech-stack: Tecnologias usadas (badges) -->
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">PyAutoGUI</span>
+                    <span class="tech-badge">Tkinter</span>
+                    <span class="tech-badge">CSV</span>
                 </div>
             </div>
         </div>
 
-        <!-- Card Controles -->
-        <div class="card">
-            <div class="card__header pink">[ CONTROLES ]</div>
-            <div class="card__body">
-                <div class="button-group">
-                    <button id="btnIniciar" class="btn btn-success">▶ INICIAR</button>
-                    <button id="btnParar" class="btn btn-danger" disabled>⏹ PARAR</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card Log -->
-        <div class="card">
-            <div class="card__header cyan">[ LOG ]</div>
-            <div class="card__body">
-                <div class="log-container" id="logContainer">
-                    <div id="log"></div>
-                </div>
-            </div>
-        </div>
-
+        <!-- ========== RODAPÉ ========== -->
         <footer>
+            <!-- 
+                FOOTER: Tag semântica para rodapé
+                Normalmente contém créditos, links, copyright
+            -->
             <div class="divider"></div>
             <div class="credits">
-                produzido por <strong class="neon-green">Misa</strong> | v2.0
+                <span>produzido por</span>
+                <strong class="neon-green">Misa</strong>
+                <span>| v2.0</span>
             </div>
         </footer>
     </div>
-
-    <script src="src/js/script.js"></script>
 </body>
 </html>
