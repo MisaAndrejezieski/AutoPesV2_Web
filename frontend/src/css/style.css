@@ -1,52 +1,83 @@
 /* ============================================
-   AutoPes V2 - Dark Neon Theme
-   Autor: Misael Andrejezieski
-   Versão: 2.0.0
+   CSS: Cascading Style Sheets
+   Define a APARÊNCIA do site (cores, fontes, posições)
+   
+   REGRA CSS: seletor { propriedade: valor; }
+   Ex: body { background: black; }
    ============================================ */
 
+/* ===== VARIÁVEIS CSS ===== */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-tertiary: #1a1a1a;
-    --bg-input: #1f1f1f;
+    /* 
+        :root: pseudo-classe que representa o elemento HTML
+        Variáveis definidas aqui valem para TODO o site
+        Basta mudar o valor em UM lugar que muda em TUDO
+    */
     
-    --neon-cyan: #00f3ff;
-    --neon-pink: #ff006e;
-    --neon-green: #00ff88;
-    --neon-yellow: #ffbe0b;
-    --neon-purple: #8338ec;
+    /* Cores de fundo (dark mode) */
+    --bg-primary: #0a0a0a;      /* Fundo principal (preto) */
+    --bg-secondary: #111111;    /* Fundo secundário (cinza escuro) */
+    --bg-tertiary: #1a1a1a;     /* Fundo terciário (cinza médio) */
+    --bg-input: #1f1f1f;        /* Fundo de inputs */
     
-    --text-primary: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --text-muted: #6c6c6c;
+    /* Cores neon (destaques) */
+    --neon-cyan: #00f3ff;       /* Azul neon - informações */
+    --neon-pink: #ff006e;       /* Rosa neon - títulos */
+    --neon-green: #00ff88;      /* Verde neon - sucesso */
+    --neon-yellow: #ffbe0b;     /* Amarelo neon - avisos */
+    --neon-purple: #8338ec;     /* Roxo neon - decoração */
+    
+    /* Cores de texto */
+    --text-primary: #e0e0e0;    /* Texto principal (claro) */
+    --text-secondary: #a0a0a0;  /* Texto secundário (mais apagado) */
+    --text-muted: #6c6c6c;      /* Texto bem apagado */
 }
 
+/* ===== RESET ===== */
 * {
+    /* 
+        * (asterisco): Seletor universal - afeta TODOS os elementos
+        margin: 0 - remove margens padrão do navegador
+        padding: 0 - remove espaçamentos padrão
+        box-sizing: border-box - faz width incluir padding e borda
+        Isso garante consistência entre navegadores
+    */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== CORPO DA PÁGINA ===== */
 body {
-    background: var(--bg-primary);
+    /* 
+        body: seletor para o elemento body
+        Tudo aqui aplica ao corpo inteiro
+    */
+    background: var(--bg-primary);  /* Usa variável CSS */
     color: var(--text-primary);
     font-family: 'Consolas', 'Courier New', monospace;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    /* 
+        font-family: lista de fontes (primeira disponível)
+        monospace: fallback (fonte de largura fixa)
+    */
+    min-height: 100vh;              /* Altura mínima = tela inteira */
+    display: flex;                   /* Usa Flexbox para alinhamento */
+    justify-content: center;         /* Centraliza HORIZONTAL */
+    align-items: center;             /* Centraliza VERTICAL */
+    padding: 20px;                   /* Espaçamento interno */
 }
 
+/* ===== CONTAINER PRINCIPAL ===== */
 .container {
-    max-width: 550px;
-    width: 100%;
+    max-width: 550px;               /* Largura máxima */
+    width: 100%;                     /* Largura total até o máximo */
+    /* Centraliza automaticamente (por causa do flex no body) */
 }
 
-/* Header */
+/* ===== CABEÇALHO ===== */
 header {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: center;              /* Centraliza texto */
+    margin-bottom: 30px;             /* Espaço abaixo */
 }
 
 .logo {
@@ -54,14 +85,33 @@ header {
 }
 
 .icon {
-    font-size: 52px;
-    display: inline-block;
+    font-size: 52px;                 /* Tamanho da fonte */
+    display: inline-block;           /* Permite animação inline */
     animation: pulse 2s ease-in-out infinite;
+    /* 
+        animation: nome | duração | timing | repetição
+        pulse: nome da animação (definida abaixo)
+        2s: 2 segundos
+        ease-in-out: começa devagar, acelera, termina devagar
+        infinite: repete para sempre
+    */
 }
 
+/* ===== ANIMAÇÃO ===== */
 @keyframes pulse {
-    0%, 100% { opacity: 1; text-shadow: none; }
-    50% { opacity: 0.7; text-shadow: 0 0 10px var(--neon-cyan); }
+    /* 
+        @keyframes: define uma animação
+        pulse: nome da animação
+        De 0% (início) a 100% (fim) da animação
+    */
+    0%, 100% { 
+        opacity: 1;                  /* Totalmente visível */
+        text-shadow: none;           /* Sem sombra */
+    }
+    50% { 
+        opacity: 0.7;                /* 70% visível */
+        text-shadow: 0 0 10px var(--neon-cyan); /* Soma neon */
+    }
 }
 
 h1 {
@@ -77,149 +127,76 @@ h1 {
 
 .divider {
     height: 2px;
+    /* 
+        background: linear-gradient(deg, cor1, cor2, cor3)
+        Cria um gradiente que começa transparente, vai ao roxo, termina transparente
+    */
     background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
     margin: 15px 0;
 }
 
-/* Cards */
+/* ===== CARDS ===== */
 .card {
     background: var(--bg-secondary);
-    margin-bottom: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 20px;            /* Espaço entre cards */
+    border: 1px solid rgba(255,255,255,0.05); /* Borda bem sutil */
 }
 
 .card__header {
+    /* Elemento dentro de .card */
     padding: 12px;
     text-align: center;
     font-size: 11px;
     font-weight: bold;
-    letter-spacing: 2px;
-    border-top: 2px solid;
+    letter-spacing: 2px;            /* Espaçamento entre letras */
+    border-top: 2px solid;          /* Borda apenas no topo */
     background: var(--bg-tertiary);
 }
 
+/* ===== MODIFICADORES DE COR (BEM) ===== */
 .card__header.cyan { border-top-color: var(--neon-cyan); color: var(--neon-cyan); }
-.card__header.pink { border-top-color: var(--neon-pink); color: var(--neon-pink); }
 .card__header.purple { border-top-color: var(--neon-purple); color: var(--neon-purple); }
 .card__header.green { border-top-color: var(--neon-green); color: var(--neon-green); }
 
 .card__body {
-    padding: 20px;
+    padding: 20px;                  /* Espaçamento interno */
 }
 
-/* Formulários */
-.form-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-}
-
-.form-group label {
-    color: var(--neon-yellow);
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.form-group input {
-    background: var(--bg-input);
-    border: none;
-    color: var(--neon-green);
-    font-family: 'Consolas', monospace;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 8px 12px;
-    width: 80px;
-    text-align: center;
-    border-radius: 0;
-}
-
-.form-group input:focus {
-    outline: none;
-    box-shadow: 0 0 5px var(--neon-green);
-}
-
-/* Status */
-.status-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.led {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--neon-green);
-    box-shadow: 0 0 5px var(--neon-green);
-}
-
-/* Botões */
+/* ===== BOTÕES ===== */
 .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex;                  /* Flexbox para alinhar */
+    justify-content: center;        /* Centraliza os botões */
+    gap: 20px;                      /* Espaço entre botões */
+    flex-wrap: wrap;                /* Quebra linha se necessário */
 }
 
 .btn {
-    padding: 10px 25px;
+    display: inline-block;
+    padding: 12px 30px;
     font-family: 'Consolas', monospace;
     font-weight: bold;
-    font-size: 12px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;          /* Remove sublinhado de link */
+    transition: all 0.2s ease;      /* Transição suave ao passar mouse */
+    cursor: pointer;                /* Muda cursor para mãozinha */
 }
 
-.btn-success {
-    background: transparent;
-    color: var(--neon-green);
-    border: 1px solid var(--neon-green);
-}
-
-.btn-success:hover:not(:disabled) {
-    background: var(--neon-green);
-    color: var(--bg-primary);
-    box-shadow: 0 0 10px var(--neon-green);
-}
-
-.btn-danger {
-    background: transparent;
-    color: var(--neon-pink);
-    border: 1px solid var(--neon-pink);
-}
-
-.btn-danger:hover:not(:disabled) {
-    background: var(--neon-pink);
-    color: var(--bg-primary);
-    box-shadow: 0 0 10px var(--neon-pink);
-}
-
+/* Botão de download específico */
 .btn-download {
     background: transparent;
     color: var(--neon-green);
     border: 2px solid var(--neon-green);
-    padding: 12px 30px;
-    font-size: 14px;
 }
 
+/* Efeito HOVER (mouse em cima) */
 .btn-download:hover {
     background: var(--neon-green);
     color: var(--bg-primary);
     box-shadow: 0 0 15px var(--neon-green);
+    transform: translateY(-2px);    /* Sobe um pouco */
 }
 
-.btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-/* Requirements */
+/* ===== REQUISITOS ===== */
 .requirements {
     margin-top: 15px;
     text-align: center;
@@ -231,20 +208,44 @@ h1 {
     margin: 5px 0;
 }
 
-/* Log */
-.log-container {
-    background: var(--bg-primary);
-    height: 200px;
-    overflow-y: auto;
-    padding: 10px;
+/* ===== INSTRUÇÕES ===== */
+.instructions {
+    text-align: left;
+    color: var(--text-secondary);
     font-size: 11px;
+    line-height: 1.8;               /* Altura da linha (espaçamento) */
 }
 
-#log {
+.instructions p {
+    margin: 8px 0;
+}
+
+/* ===== SOBRE ===== */
+.about-text {
+    color: var(--text-primary);
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 20px;
     line-height: 1.6;
 }
 
-/* Footer */
+/* Tecnologias (badges) */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-badge {
+    background: var(--bg-tertiary);
+    color: var(--neon-cyan);
+    font-size: 10px;
+    padding: 4px 8px;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+/* ===== RODAPÉ ===== */
 footer {
     text-align: center;
     margin-top: 20px;
@@ -259,49 +260,47 @@ footer {
     color: var(--neon-green);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--neon-purple);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--neon-cyan);
-}
-
-/* Responsivo */
+/* ===== RESPONSIVIDADE ===== */
+/* 
+    @media: regra para diferentes tamanhos de tela
+    max-width: 500px - aplica quando tela for MENOR que 500px
+*/
 @media (max-width: 500px) {
     .container {
-        max-width: 100%;
-    }
-    
-    .form-group {
-        flex-direction: column;
-        gap: 8px;
-    }
-    
-    .button-group {
-        flex-direction: column;
-        align-items: center;
+        max-width: 100%;            /* Ocupa toda largura */
     }
     
     .btn {
-        width: 100%;
+        width: 100%;                /* Botão ocupa toda largura */
         text-align: center;
     }
     
     h1 {
-        font-size: 28px;
+        font-size: 28px;            /* Fonte menor no celular */
     }
     
     .icon {
         font-size: 44px;
     }
+}
+
+/* ===== SCROLLBAR PERSONALIZADA ===== */
+/* 
+    ::-webkit-scrollbar: pseudo-elemento para barra de rolagem
+    Só funciona em navegadores baseados em Chrome/Edge
+*/
+::-webkit-scrollbar {
+    width: 6px;                    /* Largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);  /* Fundo da barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);   /* A parte que desliza */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-cyan);     /* Cor ao passar mouse */
 }
