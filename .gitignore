@@ -45,4 +45,3 @@ logs/
 # Build
 dist/
 build/
-*.exe
