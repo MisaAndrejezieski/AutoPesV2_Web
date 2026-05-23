@@ -1,0 +1,18 @@
+# AutoPes V2 - Backend Dependencies
+# Versão: 2.0.0
+
+# Framework Web
+flask==3.0.0
+flask-cors==4.0.0
+
+# Automação
+pyautogui==0.9.54
+
+# Requisições HTTP
+requests==2.31.0
+
+# Variáveis de Ambiente
+python-dotenv==1.0.0
+
+# Utilitários
+pillow==10.1.0
